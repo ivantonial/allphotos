@@ -1,3 +1,15 @@
+import LoginBox from './signin/loginbox.jsx'
+import BackGroundTemplate from './signin/backgroundtemplate.jsx'
+import './signin/home.css'
+
+
+
+
 export function SignIn() {
-  return <h1>SignIn</h1>
+  return (
+    <>
+      <BackGroundTemplate  ></BackGroundTemplate>
+      <LoginBox registerURL = 'localhost:3000/signup' forgotPasswordURL = 'localhost:3000/forgot'></LoginBox>
+    </>
+  )
 }
