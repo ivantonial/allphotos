@@ -1,12 +1,34 @@
 import React from "react";
+import './signin.css';
+
+async function login(){
+    const username = document.getElementById('username-login-input').value;
+    const password = document.getElementById('password-login-input').value;
+    const objectBody = {username,password};
+
+    const path = 'http://localhost:8000';
+    const myHeader = new Headers({
+        'Access-Control-Allow-Credentials':true,
+        'Content-Type':'application/json',
+        'Accepts':'application/json'
+    });
+    const myRequest = new Request(path+'/checkuser',{
+        method:'POST',
+        credentials: 'include',
+        headers:myHeader,
+        body:JSON.stringify(objectBody)
+    });
+    const request = await fetch(myRequest);
+    console.log(await request.json());
+};
 
 export default props =>{
     return(
-        <div class="main-content">
-            <img src="/src/assets/BackgroundImage.png" class="img"></img>
+        <div className="main-content">
+            <img src="/src/assets/BackgroundImage.png" className="img"></img>
         
             <div id='login-box'>
-                <input type="text" id="username-login-input" placeholder="Login"/>
+                <input type="text" id="username-login-input" placeholder="Username"/>
                 <input type="password" id="password-login-input"placeholder="Senha"/>
                 
                 <div id="login-links-plus-btn">
@@ -15,7 +37,7 @@ export default props =>{
                         <a id='forgot-password-btn'href={props.fogotPasswordURL}>Esqueceu a senha?</a>
                     </div>
                     <div id="btn-login-box">
-                        <button type='button' id="btn-login">Entrar</button>
+                        <button type='button' id="btn-login" onClick={login}>Entrar</button>
                     </div>
                 </div>
             </div>

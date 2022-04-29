@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 // import your route components too
-import { SignIn } from "./pages/Signin/signin";
+import Coisa from "./pages/Signin/loginbox";
 import { SignUp } from "./pages/Signup/index";
 import { Home } from "./pages/Home/home";
 import { EditProfile } from "./pages/EditProfile/index";
@@ -14,7 +14,7 @@ export function AppRoutes() {
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signin" element={<Coisa registerURL="./signup" />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/editprofile" element={<EditProfile />} />
       </Routes>
