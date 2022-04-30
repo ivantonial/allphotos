@@ -1,7 +1,9 @@
 #backgroundImg {
     width: 100%;
-    height: auto;
+    height: 100vh;
     filter: blur(4px);
+    position: fixed;
+    z-index: -1;
 }
 
 #homepage {
@@ -13,10 +15,24 @@
     height: 80px;
     background-color: #451272;
     position: absolute;
+    top: 0;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content:space-between;
     align-items: center;
+}
+#right-homebar-area, #left-homebar-area{
+    display: flex;
+    align-items: center;
+}
+#right-homebar-area p{
+    color: #EDCEF7;
+    font-size: 42px;
+    margin-left: 0.5em;
+}
+#logo-svg-homebar{
+    height: 60px;
+    margin-left: 0.8em;
 }
  #photosUpload {
      background-color: #D79FF0;
@@ -58,3 +74,48 @@
      align-items: center;
      height: 20px;
  }
+
+#photos-display{
+    margin-top: 80px;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.photo-box{
+    height: 50vh;
+    background-color: #fff;
+    width: 25vw;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #451272;
+ }
+.photo-box-header{
+    display: flex;
+    justify-content: left;
+    align-items:center;
+    width: 100%;
+}
+.photo-box-header img{
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.photo-box-body{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photo-box-body img{
+    width: 95%;
+
+}
+
