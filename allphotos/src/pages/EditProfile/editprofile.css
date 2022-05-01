@@ -1,0 +1,11 @@
+#edit-profile-body{
+    padding-top: 80px;
+
+}
+
+#edit-profile-input-fields input{
+    width: auto;
+    height: auto;
+    border: 0;
+    font-size: 18px;
+}

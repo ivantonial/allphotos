@@ -22,8 +22,13 @@ export const Home = () => {
               <p>Username</p>
               </div>
             <div className="photo-box-body"><img src="/src/assets/galolindo.png" alt="" /></div>
-            <div className="photo-box-footer"></div>
+            <div className="photo-box-footer">
+              <img src="/src/assets/heart.svg" alt="" className='photo-box-heart-img' />
+              <p className="photo-box-likes">145</p> <p className="photo-box-description">Wow, nice cock!</p>
+            </div>
           </div>
+          <div className='photo-box'></div>
+          <div className='photo-box'></div>
           <div className='photo-box'></div>
           <div className='photo-box'></div>
           <div className='photo-box'></div>
