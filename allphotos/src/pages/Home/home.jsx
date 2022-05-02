@@ -1,3 +1,5 @@
+import React from "react";
+import PhotoBox from "./photobox.jsx";
 import './home.css'
 
 async function get_posts(){
@@ -6,9 +8,34 @@ async function get_posts(){
 
   const request = await fetch(myRequests);
   console.log(request.status);
+  let requestJson
+    if(request.status === 200){
+      requestJson = await request.json();
+      
+    }else{
+      requestJson = 'DEU ERRADO'
+    }
+  console.log(requestJson)
+  return requestJson
 };
 
-get_posts();
+const images = get_posts();
+// Mock DATA
+// const images = [
+//   { name: 'MaquinhosGAMEPLAY', title: 'NADA', description: 'I like toads', img: <img src="/src/assets/galolindo.png"  /> },
+//   { name: 'MaquinhosGAMEPLAY', title: 'NADA', description: 'I like big cocks', img: <img src="/src/assets/galolindo.png"  /> },
+//   { name: 'MaquinhosGAMEPLAY', title: 'NADA', description: 'I like toads', img: <img src="/src/assets/galolindo.png"  /> }
+// ]
+function imgAreaGeneration(imgArray){
+  let tagArea =[]
+  imgArray.forEach(element => {
+    tagArea.push(<PhotoBox name={element.name} imgTag={element.img} description={element.description}></PhotoBox>)
+  });
+  console.log(tagArea)
+  const theReturn = tagArea;
+  return theReturn
+}
+const imgArea = imgAreaGeneration(images)
 
 export const Home = () => {
   return (
@@ -26,24 +53,8 @@ export const Home = () => {
           </div>
         </div>
         <div id='photos-display'>
-          <div className='photo-box'>
-            <div className="photo-box-header">
-              <img src="/src/assets/imgProfile.jpeg" alt="" /> 
-              <p>Username</p>
-            </div>
-            <div className="photo-box-body"><img src="/src/assets/galolindo.png" alt="" /></div>
-            <div className="photo-box-footer">
-              <img src="/src/assets/heart.svg" alt="" className='photo-box-heart-img' />
-              <p className="photo-box-likes">145</p> <p className="photo-box-description">Wow, nice cock!</p>
-            </div>
-          </div>
-          <div className='photo-box'></div>
-          <div className='photo-box'></div>
-          <div className='photo-box'></div>
-          <div className='photo-box'></div>
-          <div className='photo-box'></div>
-          <div className='photo-box'></div>
-          <div className='photo-box'></div>
+
+          {imgArea}
           
         </div>
       </div>
