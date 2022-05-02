@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#span-name,#span-password,#span-email,#span-date,#result{
+  color: red;
+  font-size: 10px;
+}
+
+#result{
+  font-size: 20px;
+}
