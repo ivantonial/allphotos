@@ -92,7 +92,7 @@ export function SignUp() {
           {/* <img src="/src/assets/BackgroundImage.png" class="img">
           </img> */}
           <div id="register-image-container-logo">
-            <img className='register-image-container' src="/src/assets/Logo.svg" />
+            <img className='register-image-container' src="/src/assets/Logo.svg" draggable='false' />
             <span id='register-span-image' className='register-image-container'>AllPhotos</span>
           </div>
           <h2>Share Your Photos</h2>

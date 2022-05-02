@@ -33,22 +33,30 @@ async function login(){
 
 export default props =>{
     return(
-        <div className="main-content">
-            <img src="/src/assets/BackgroundImage.png" className="img" draggable='false'></img>
-        
-            <div id='login-box'>
-                <input type="text" id="username-login-input" placeholder="Username"/>
-                <input type="password" id="password-login-input"placeholder="Senha"/>
-                <span id='password-login-msg'></span>
-                <div id="login-links-plus-btn">
-                    <div id="login-links">
-                        <a id='create-account-btn'href={props.registerURL}>Criar conta</a>
-                        {/* <a id='forgot-password-btn'href={props.fogotPasswordURL}>Esqueceu a senha?</a> */}
-                    </div>
-                    <div id="btn-login-box">
-                        <button type='button' id="btn-login" onClick={login}>Entrar</button>
+        <div className="main-content-login">
+            {/* <img src="/src/assets/BackgroundImage.png" className="img" draggable='false'></img> */}
+            <div id='part-one'>
+                <div id="register-image-container-logo">
+                    <img className='register-image-container' src="/src/assets/Logo.svg" draggable='false'/>
+                    <span id='register-span-image' className='register-image-container'>AllPhotos</span>
+                </div>
+                <div id='login-box'>
+                    <input type="text" id="username-login-input" placeholder="Username"/>
+                    <input type="password" id="password-login-input"placeholder="Senha"/>
+                    <span id='password-login-msg'></span>
+                    <div id="login-links-plus-btn">
+                        <div id="login-links">
+                            <a id='create-account-btn'href={props.registerURL}>Criar conta</a>
+                            {/* <a id='forgot-password-btn'href={props.fogotPasswordURL}>Esqueceu a senha?</a> */}
+                        </div>
+                        <div id="btn-login-box">
+                            <button type='button' id="btn-login" onClick={login}>Entrar</button>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div id='part-two'>
+                <h2>Share Your Photos</h2>
             </div>
         </div>
     )

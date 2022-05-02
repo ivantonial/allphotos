@@ -2,24 +2,24 @@ import React from "react";
 import PhotoBox from "./photobox.jsx";
 import './home.css'
 
-async function get_posts(){
-  const path = 'http://localhost:8000';
-  myRequests = new Request('/getImages');
+// async function get_posts(){
+//   const path = 'http://localhost:8000';
+//   const myRequests = new Request(path+'/getImages');
 
-  const request = await fetch(myRequests);
-  console.log(request.status);
-  let requestJson
-    if(request.status === 200){
-      requestJson = await request.json();
+//   const request = await fetch(myRequests);
+//   console.log(request.status);
+//   let requestJson
+//     if(request.status === 200){
+//       requestJson = await request.json();
       
-    }else{
-      requestJson = 'DEU ERRADO'
-    }
-  console.log(requestJson)
-  return requestJson
-};
+//     }else{
+//       requestJson = 'DEU ERRADO'
+//     }
+//   console.log(requestJson)
+//   return requestJson
+// };
 
-const images = get_posts();
+// const images = get_posts();
 // Mock DATA
 // const images = [
 //   { name: 'MaquinhosGAMEPLAY', title: 'NADA', description: 'I like toads', img: <img src="/src/assets/galolindo.png"  /> },
@@ -33,9 +33,10 @@ function imgAreaGeneration(imgArray){
   });
   console.log(tagArea)
   const theReturn = tagArea;
+  console.log(theReturn);
   return theReturn
 }
-const imgArea = imgAreaGeneration(images)
+//const imgArea = imgAreaGeneration(images)
 
 export const Home = () => {
   return (
