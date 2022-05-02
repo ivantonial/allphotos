@@ -124,3 +124,11 @@
     width: 97%;
     padding-left: 3%;
 }
+.photo-box-heart-img{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.photo-box-heart-img:hover{
+    
+    background-color: rgba(0, 0, 0, 0.116);
+}
