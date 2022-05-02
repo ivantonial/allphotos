@@ -2,7 +2,6 @@ import React from "react";
 import PhotoBox from "./photobox.jsx";
 import './home.css'
 
-<<<<<<< HEAD
 // async function get_posts(){
 //   const path = 'http://localhost:8000';
 //   const myRequests = new Request(path+'/getImages');
@@ -27,25 +26,6 @@ import './home.css'
 //   { name: 'MaquinhosGAMEPLAY', title: 'NADA', description: 'I like big cocks', img: <img src="/src/assets/galolindo.png"  /> },
 //   { name: 'MaquinhosGAMEPLAY', title: 'NADA', description: 'I like toads', img: <img src="/src/assets/galolindo.png"  /> }
 // ]
-=======
-let imgArea;
-
-function get_posts(){
-  const path = 'http://localhost:8000';
-  const myRequests = new Request(path + '/getImages');
-  fetch(myRequests).then(elem => {
-    if(elem.status != 200) return "Deu errado"  
-    else return elem.json()
-  }).then(elem => {
-    imgArea = imgAreaGeneration(elem)
-  }).catch(err => {
-    console.log(err);
-  })
-};
-
-get_posts();
-
->>>>>>> f9d06dcd2b1420f2cc2c2a483d1438da91081803
 function imgAreaGeneration(imgArray){
   let tagArea =[]
   imgArray.forEach(element => {
@@ -66,10 +46,7 @@ function imgAreaGeneration(imgArray){
   console.log(theReturn);
   return theReturn
 }
-<<<<<<< HEAD
 //const imgArea = imgAreaGeneration(images)
-=======
->>>>>>> f9d06dcd2b1420f2cc2c2a483d1438da91081803
 
 export const Home = () => {
   return (
