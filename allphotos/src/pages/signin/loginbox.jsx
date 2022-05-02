@@ -18,23 +18,32 @@ async function login(){
         headers:myHeader,
         body:JSON.stringify(objectBody)
     });
+    
     const request = await fetch(myRequest);
-    console.log(await request.json());
+    if(request.status === 200){
+        const {accessToken} = await request.json();
+        localStorage.setItem('accessToken', accessToken);
+    }else{
+        const {query} = await request.json();
+        const msgElement = document.getElementById('password-login-msg');
+        msgElement.style.display = 'initial';
+        msgElement.textContent = query;
+    };
 };
 
 export default props =>{
     return(
         <div className="main-content">
-            <img src="/src/assets/BackgroundImage.png" className="img"></img>
+            <img src="/src/assets/BackgroundImage.png" className="img" draggable='false'></img>
         
             <div id='login-box'>
                 <input type="text" id="username-login-input" placeholder="Username"/>
                 <input type="password" id="password-login-input"placeholder="Senha"/>
-                
+                <span id='password-login-msg'></span>
                 <div id="login-links-plus-btn">
                     <div id="login-links">
                         <a id='create-account-btn'href={props.registerURL}>Criar conta</a>
-                        <a id='forgot-password-btn'href={props.fogotPasswordURL}>Esqueceu a senha?</a>
+                        {/* <a id='forgot-password-btn'href={props.fogotPasswordURL}>Esqueceu a senha?</a> */}
                     </div>
                     <div id="btn-login-box">
                         <button type='button' id="btn-login" onClick={login}>Entrar</button>

@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+*{
+  --poppins: 'Poppins', sans-serif;
+}
+
 body {
   margin: 0;
 }
@@ -5,16 +11,18 @@ body {
 .main-content {
   display: flex;
   justify-content: end;
+  height: 100vh;
+  width: 100vw;
 }
 #container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  /* position: absolute; */
   background: rgb(255, 255, 255);
   height: 100%;
-  width: 400px;
+  width: 40%;
   padding-left: 10px;
 }
 
@@ -22,6 +30,7 @@ h1 {
   font-family: "Poppins", sans-serif;
   font-size: 3.5em;
   margin-top: 1px;
+  color:#303030;
 }
 input {
   width: 303px;
@@ -31,7 +40,7 @@ input {
   border-left-style: hidden;
   border-bottom-style: groove;
   height: 52px;
-  padding: 5px;
+  /* padding: 5px; */
   font-size: 1.2rem;
 }
 input::placeholder {
@@ -54,6 +63,61 @@ button {
   color: white;
 }
 
+#register-image-container-logo{
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+}
+
+.register-image-container{
+  align-self: flex-start !important;
+  padding: 1rem;
+  width: 150px;
+  font-size: 60px;
+}
+
+#register-span-image{
+  display: inline;
+  font-size: 65px;
+  margin-top: 35px;
+  margin-left: -10px;
+  color: #303030;
+  font-family: var(--poppins);
+}
+
 button:hover {
   opacity: 80%;
 }
+
+#image-container{
+  background-image: url("/src/assets/BackgroundImage.png");
+  background-size: contain;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+}
+
+#container-messages > h2{
+  font-size: 65px;
+  font-family: var(--poppins);
+  font-weight: 400;
+  color: #303030;
+  width: 220px;
+  text-align: end;
+  margin: 0px;
+  margin-bottom: 10px ;
+  padding: 0px;
+  padding-right: 10px;
+}
+
+#container-messages{
+  width: 85%; 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between
+};

@@ -1,5 +1,32 @@
 import './editprofile.css'
 
+async function editProfile(){
+  const username = document.getElementById('full-name-input').value;
+  const password = document.getElementById('password-input').value;
+  const email = document.getElementById('email-input').value;
+  const birthDate = document.getElementById('birthdate-input').value;
+
+  const accessToken = localStorage.getItem('accessToken');
+  console.log(accessToken);
+
+  const object = {username, password, email, birthDate};
+
+  const path = `http://localhost:8000`;
+  const myHeaders = new Headers({
+    'Accepts':'appllication/json',
+    'Content-Type':'application/json',
+    "authorization": `bearer ${accessToken}`
+  });
+  const myRequests = new Request( path + '/editProfile',{
+    method:'POST',
+    headers: myHeaders,
+    body: JSON.stringify(object)
+  });
+
+  const request = await fetch(myRequests);
+  console.log(request.status);
+};
+
 export function EditProfile() {
   return (
   <div id="editProfilePage">
@@ -34,22 +61,22 @@ export function EditProfile() {
           <input type="email" id='email-input' />
         </div>
 
-        <div className="single-input-div">
+        {/* <div className="single-input-div">
           <label htmlFor="phone-input">Número de celular</label>
           <input type='tel' id='phone-input' />
-        </div>
+        </div> */}
 
         <div className="single-input-div">
           <label htmlFor="birthdate-input">Data de nascimento</label>
           <input type='date' id='birthdate-input' />
         </div>
 
-        <div className="single-input-div">
+        {/* <div className="single-input-div">'
           <label htmlFor="CPF-input">CPF</label>
           <input type='number' id='CPF-input' />
-        </div>
+        </div> */}
 
-        <div className="single-input-div">
+        {/* <div className="single-input-div">'
         <label htmlFor="gender-input">Sexo</label>
         <select name="select" id='gender-input'>
           <option value="masculino">Masculino</option>
@@ -57,13 +84,13 @@ export function EditProfile() {
           <option value="nao-informar">Prefiro não informar</option>
           <option value="sim">Faço</option>
         </select>
-        </div>
+        </div> */}
 
       </div>
       <div id="input-profile-photo-field">
         <p>COLOCAR IMPORTAÇÂO DE FOTO AQUI</p>
       </div>
-      <button type='button' id='save-edit-profile-btn'>Salvar</button>
+      <button onClick={editProfile} type='button' id='save-edit-profile-btn'>Salvar</button>
     </div>
   </div>
 )

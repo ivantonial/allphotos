@@ -1,5 +1,15 @@
 import './home.css'
 
+async function get_posts(){
+  const path = 'http://localhost:8000';
+  myRequests = new Request('/getImages');
+
+  const request = await fetch(myRequests);
+  console.log(request.status);
+};
+
+get_posts();
+
 export const Home = () => {
   return (
       <div id="homepage">
@@ -20,7 +30,7 @@ export const Home = () => {
             <div className="photo-box-header">
               <img src="/src/assets/imgProfile.jpeg" alt="" /> 
               <p>Username</p>
-              </div>
+            </div>
             <div className="photo-box-body"><img src="/src/assets/galolindo.png" alt="" /></div>
             <div className="photo-box-footer">
               <img src="/src/assets/heart.svg" alt="" className='photo-box-heart-img' />

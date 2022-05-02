@@ -61,6 +61,7 @@
     height: 40px;
     font-size: 18px;
     margin-top: 0;
+    margin-right: 20px;
 }
 
 .main-content {
@@ -72,3 +73,21 @@
     width: 100%;
     height: auto;
   }
+
+#password-login-msg{
+    /* color: red; */
+    display: none;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    background-color: #7a66ff;
+    padding: 15px 20px 15px 10px;
+    border-radius: 10px;
+}
+
+#create-account-btn{
+    font-size: 18px !important;
+    text-decoration: underline !important;
+    color: #7a66ff;
+    margin-left: 10px;
+}
