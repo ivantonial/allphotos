@@ -2,6 +2,7 @@ import React from "react";
 import PhotoBox from "./photobox.jsx";
 import './home.css'
 
+<<<<<<< HEAD
 // async function get_posts(){
 //   const path = 'http://localhost:8000';
 //   const myRequests = new Request(path+'/getImages');
@@ -26,17 +27,49 @@ import './home.css'
 //   { name: 'MaquinhosGAMEPLAY', title: 'NADA', description: 'I like big cocks', img: <img src="/src/assets/galolindo.png"  /> },
 //   { name: 'MaquinhosGAMEPLAY', title: 'NADA', description: 'I like toads', img: <img src="/src/assets/galolindo.png"  /> }
 // ]
+=======
+let imgArea;
+
+function get_posts(){
+  const path = 'http://localhost:8000';
+  const myRequests = new Request(path + '/getImages');
+  fetch(myRequests).then(elem => {
+    if(elem.status != 200) return "Deu errado"  
+    else return elem.json()
+  }).then(elem => {
+    imgArea = imgAreaGeneration(elem)
+  }).catch(err => {
+    console.log(err);
+  })
+};
+
+get_posts();
+
+>>>>>>> f9d06dcd2b1420f2cc2c2a483d1438da91081803
 function imgAreaGeneration(imgArray){
   let tagArea =[]
   imgArray.forEach(element => {
     tagArea.push(<PhotoBox name={element.name} imgTag={element.img} description={element.description}></PhotoBox>)
+    document.getElementById("photos-display").innerHTML += `
+    <div class='photo-box'>
+    <div class="photo-box-header">
+      <img src="/src/assets/imgProfile.jpeg" alt="" /> 
+      <p>${element.name}</p>
+    </div>
+    <div class="photo-box-body">${element.img}</div>
+    <div class="photo-box-footer">
+        <p class="photo-box-description">${element.description}</p>
+    </div>
+  </div>`
   });
-  console.log(tagArea)
   const theReturn = tagArea;
   console.log(theReturn);
   return theReturn
 }
+<<<<<<< HEAD
 //const imgArea = imgAreaGeneration(images)
+=======
+>>>>>>> f9d06dcd2b1420f2cc2c2a483d1438da91081803
 
 export const Home = () => {
   return (
@@ -54,9 +87,6 @@ export const Home = () => {
           </div>
         </div>
         <div id='photos-display'>
-
-          {imgArea}
-          
         </div>
       </div>
   )

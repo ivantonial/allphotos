@@ -494,9 +494,15 @@
     "es6-iterator" "^2.0.3"
     "es6-symbol" "^3.1.1"
 
+<<<<<<< HEAD
+"esbuild-linux-64@0.14.38":
+  "integrity" "sha512-uuZHNmqcs+Bj1qiW9k/HZU3FtIHmYiuxZ/6Aa+/KHb/pFKr7R3aVqvxlAudYI9Fw3St0VCPfv7QBpUITSmBR1Q=="
+  "resolved" "https://registry.npmjs.org/esbuild-linux-64/-/esbuild-linux-64-0.14.38.tgz"
+=======
 "esbuild-windows-32@0.14.38":
   "integrity" "sha512-L2BmEeFZATAvU+FJzJiRLFUP+d9RHN+QXpgaOrs2klshoAm1AE6Us4X6fS9k33Uy5SzScn2TpcgecbqJza1Hjw=="
   "resolved" "https://registry.npmjs.org/esbuild-windows-32/-/esbuild-windows-32-0.14.38.tgz"
+>>>>>>> 1ed45bda9b34541a50c277194cfe83767a252db5
   "version" "0.14.38"
 
 "esbuild@^0.14.27":
