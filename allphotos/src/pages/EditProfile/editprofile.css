@@ -1,11 +1,38 @@
 #edit-profile-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 80px;
 
 }
+#edit-profile-input-fields{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
 
 #edit-profile-input-fields input{
-    width: auto;
-    height: auto;
+    margin: 0;
+    width: 300px;
+    height: 20px;
     border: 0;
     font-size: 18px;
 }
+
+#edit-profile-input-fields select{
+width: 300px;
+}
+
+#save-edit-profile-btn {
+    margin: 0;
+    width: 200px;
+    height: 40px;
+}
+
+.single-input-div {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
