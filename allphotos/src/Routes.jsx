@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 // import your route components too
-import SignIn from "./pages/Signin/loginbox";
+import SignIn from "./pages/signin/loginbox";
 import { SignUp } from "./pages/Signup/index";
 import { Home } from "./pages/Home/home";
 import { EditProfile } from "./pages/EditProfile/index";
